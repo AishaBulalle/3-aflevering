@@ -1,0 +1,19 @@
+{
+  "name": "Dewgong",
+  "description": "Its entire body is a snowy white. Unharmed by even intense cold, it swims powerfully in icy waters.",
+  "ability": "thick fat, hydration",
+  "image": "https://img.pokemondb.net/artwork/large/dewgong.jpg",
+  "type": "water, ice",
+  "subtype": "stage-1",
+  "weaknesses": "grass,electric,fighting and rock",
+  "gender": "50% male and 50% female",
+  "weight": "264.6",
+  "height": "5,07",
+  "generation": "7",
+  "statsHP": "90",
+  "statsAttack": "70",
+  "statsDefence": "80",
+  "statsSpecialAttack": "70",
+  "statsspecialDefence": "95",
+  "statsSpeed": "70"
+}
