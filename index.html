@@ -4,10 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3aflevering</title>
+    <link rel="stylesheet" href="app.css" />
+    <title>dewgong</title>
   </head>
   <body>
-    <ul id="pokemons"></ul>
+    <header>
+      <h1>Dewgong Pokemon</h1>
+    </header>
+    <main>
+      <section id="characters" class="grid-container"></section>
+    </main>
+    <dialog id="dialog-character">
+      <section class="dialog-grid">
+        <figure>
+          <img
+            id="dialog-image"
+            src="https://img.pokemondb.net/artwork/large/dewgong.jpg"
+            alt=""
+          />
+        </figure>
+        <article>
+          <h2 id="dialog-title"></h2>
+          <p id="dialog-description"></p>
+          <section>
+            <h4>Personal Info</h4>
+            <ul>
+              <li>ability: <span id="dialog-ability"></span></li>
+              <li>type: <span id="dialog-type"></span></li>
+              <li>subtype: <span id="dialog-subtype"></span></li>
+              <li>weaknesses: <span id="dialog-weaknesses"></span></li>
+              <li>gender: <span id="dialog-gender"></span></li>
+              <li>height: <span id="dialog-height"></span></li>
+              <li>generation: <span id="dialog-generation"></span></li>
+              <li>statsHP: <span id="dialog-statsHP"></span></li>
+              <li>statsAttack: <span id="dialog-statsAttack"></span></li>
+              <li>statsDefence: <span id="dialog-statsDefence"></span></li>
+              <li>
+                statsSpecialAttack: <span id="dialog-statsSpecialAttack"></span>
+              </li>
+              <li>
+                statsspecialDefence:
+                <span id="dialog-statsspecialDefence"></span>
+              </li>
+              <li>statsSpeed: <span id="dialog-statsSpeed"></span></li>
+              <li>weight: <span id="dialog-weight"></span></li>
+            </ul>
+          </section>
+        </article>
+      </section>
+      <form method="dialog">
+        <button id="btn-cancel">Close</button>
+      </form>
+    </dialog>
+    <footer>
+      <p>Pokemon App by Bulalle</p>
+    </footer>
+
     <script src="app.js"></script>
   </body>
 </html>

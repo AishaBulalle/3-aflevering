@@ -13,23 +13,62 @@ async function getCharacter(url) {
   return data;
 }
 
-function addPokemon(pokemons) {
-  const myPokemons = /* html */ `
-<li> <b> Discription</b>: <br> ${pokemons.discription}</li>
-  <br><li> <b>Name</b>: ${pokemons.name}</li>
-  <li> <b>Number</b>: ${pokemons.number} </li>
-  <li> <b>Height</b>: ${pokemons.height} </li>
-  <li> <b>Weight</b>: ${pokemons.weight} </li>
-  <li> <b>Category</b>: ${pokemons.category} </li>
-  <li> <b>Gender</b>: ${pokemons.gender} </li>
-  <li> <b>Type</b>: ${pokemons.type} </li>
-  <li> <b>Weaknesses</b>: ${pokemons.weaknesses} </li>
-  
-`;
+function showCharacter(character) {
+  console.log(character);
 
+  document.querySelector("#characters").insertAdjacentHTML(
+    "beforeend",
+    /*html*/ `
+            <article class="grid-item">
+                <img src="${character.image}">
+                <h2>${character.name}</h2>
+                <p>Gender:${character.gender}</p>
+                <p>ability: ${character.ability}</p>
+                
+            </article>
+        `
+  );
   document
-    .querySelector("#pokemons")
-    .insertAdjacentHTML("beforeend", myPokemons);
+    .querySelector("#characters article:last-child")
+    .addEventListener("click", characterClicked);
+
+  function characterClicked() {
+    showCharacterModal(character);
+  }
 }
 
-addPokemon(dewgong);
+function showCharacterModal(character) {
+  console.log(character);
+  //image, name and house
+  document.querySelector("#dialog-image").src = character.image;
+  document.querySelector("#dialog-title").textContent = character.name;
+
+  // description
+  document.querySelector("#dialog-description").textContent =
+    character.description;
+
+  document.querySelector("#dialog-ability").textContent = character.ability;
+  document.querySelector("#dialog-type").textContent = character.type;
+  document.querySelector("#dialog-subtype").textContent = character.subtype;
+  document.querySelector("#dialog-weaknesses").textContent =
+    character.weaknesses;
+  document.querySelector("#dialog-gender").textContent = character.gender;
+  document.querySelector("#dialog-weight").textContent = character.weight;
+  document.querySelector("#dialog-height").textContent = character.height;
+  document.querySelector("#dialog-generation").textContent =
+    character.generation;
+  document.querySelector("#dialog-statsHP").textContent = character.statsHP;
+  document.querySelector("#dialog-statsAttack").textContent =
+    character.statsAttack;
+  document.querySelector("#dialog-statsDefence").textContent =
+    character.statsDefence;
+  document.querySelector("#dialog-statsSpecialAttack").textContent =
+    character.statsSpecialAttack;
+  document.querySelector("#dialog-statsspecialDefence").textContent =
+    character.statsspecialDefence;
+  document.querySelector("#dialog-statsSpeed").textContent =
+    character.statsSpeed;
+
+  // show dialog
+  document.querySelector("#dialog-character").showModal();
+}
