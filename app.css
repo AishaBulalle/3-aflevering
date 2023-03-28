@@ -128,6 +128,7 @@ main {
   transition: 0.5s;
   animation: fadeIn 0.5s;
   cursor: pointer;
+  border-radius: 25%;
 }
 
 .grid-item:hover {
@@ -137,7 +138,8 @@ main {
 .grid-item img {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+
+  border-radius: 25%;
 }
 
 .grid-item p {
