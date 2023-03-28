@@ -48,6 +48,8 @@ function showCharacterModal(character) {
     character.description;
 
   document.querySelector("#dialog-ability").textContent = character.ability;
+  document.querySelector("#dialog-footprint").textContent = character.footprint;
+  document.querySelector("#dialog-dexindex").textContent = character.dexindex;
   document.querySelector("#dialog-type").textContent = character.type;
   document.querySelector("#dialog-subtype").textContent = character.subtype;
   document.querySelector("#dialog-weaknesses").textContent =
@@ -57,6 +59,9 @@ function showCharacterModal(character) {
   document.querySelector("#dialog-height").textContent = character.height;
   document.querySelector("#dialog-generation").textContent =
     character.generation;
+  document.querySelector("#dialog-spilversion").textContent =
+    character.spilversion;
+  document.querySelector("#dialog-canEvolve").textContent = character.canEvolve;
   document.querySelector("#dialog-statsHP").textContent = character.statsHP;
   document.querySelector("#dialog-statsAttack").textContent =
     character.statsAttack;
@@ -64,8 +69,8 @@ function showCharacterModal(character) {
     character.statsDefence;
   document.querySelector("#dialog-statsSpecialAttack").textContent =
     character.statsSpecialAttack;
-  document.querySelector("#dialog-statsspecialDefence").textContent =
-    character.statsspecialDefence;
+  document.querySelector("#dialog-statsSpecialDefence").textContent =
+    character.statsSpecialDefence;
   document.querySelector("#dialog-statsSpeed").textContent =
     character.statsSpeed;
 
