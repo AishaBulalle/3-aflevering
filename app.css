@@ -50,15 +50,13 @@ img {
 /* ---------- header styling ---------- */
 header {
   background-color: rgb(9, 153, 26);
-  color: white;
+  color: #6cafe1;
   padding: 1em;
-
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
 }
-/* ---------- footer styling ---------- */
 
 /* ---------- main page styling ---------- */
 main {
@@ -212,4 +210,25 @@ dialog ul {
 }
 dialog p {
   margin: 0.5em 0 1em;
+}
+
+.pulse {
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(80%);
+  }
+
+  50% {
+    transform: scale(100%);
+  }
+
+  100% {
+    transform: scale(80%);
+  }
 }
