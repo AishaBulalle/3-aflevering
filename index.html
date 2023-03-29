@@ -12,47 +12,41 @@
       <h1>Pokemons</h1>
     </header>
     <main>
-      <section id="Pokemon" class="grid-container"></section>
+      <div id="pokemon-character" class="grid-container"></div>
     </main>
-    <dialog id="dialog-pokemon">
-      <section class="dialog-grid">
-        <figure>
-          <img
-            id="dialog-image"
-            src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/087.png"
-            alt=""
-          />
-        </figure>
+
+    <dialog id="dialog-character">
+      <section id="dialog-grid">
+        <figure><img id="detail-image" src="" alt="" /></figure>
         <article>
-          <h2 id="dialog-title"></h2>
-          <p id="dialog-description"></p>
+          <h2 id="detail-name"></h2>
+          <p>
+            <span id="detail-description"></span>
+          </p>
           <section>
-            <h4>Personal Info</h4>
-            <ul>
-              <li>ability: <span id="dialog-ability"></span></li>
-              <li>footprint: <span id="dialog-footprint"></span></li>
-              <li>dexindex: <span id="dialog-dexindex"></span></li>
-              <li>type: <span id="dialog-type"></span></li>
-              <li>subtype: <span id="dialog-subtype"></span></li>
-              <li>weaknesses: <span id="dialog-weaknesses"></span></li>
-              <li>gender: <span id="dialog-gender"></span></li>
-              <li>height: <span id="dialog-height"></span></li>
-              <li>generation: <span id="dialog-generation"></span></li>
-              <li>spilversion: <span id="dialog-spilversion"></span></li>
-              <li>canEvolve: <span id="dialog-canEvolve"></span></li>
-              <li>statsHP: <span id="dialog-statsHP"></span></li>
-              <li>statsAttack: <span id="dialog-statsAttack"></span></li>
-              <li>statsDefence: <span id="dialog-statsDefence"></span></li>
-              <li>
-                statsSpecialAttack: <span id="dialog-statsSpecialAttack"></span>
-              </li>
-              <li>
-                statsSpecialDefence:
-                <span id="dialog-statsSpecialDefence"></span>
-              </li>
-              <li>statsSpeed: <span id="dialog-statsSpeed"></span></li>
-              <li>weight: <span id="dialog-weight"></span></li>
-            </ul>
+            <h3>Info about <span id="detail-info"> </span></h3>
+            <section>
+              <ul>
+                <li id="detail-ability"></li>
+                <li id="detail-dexindex"></li>
+                <li id="detail-subtype"></li>
+                <li id="detail-generation"></li>
+                <li id="detail-footprint"></li>
+                <li id="detail-height"></li>
+                <li id="detail-weight"></li>
+                <li id="detail-gender"></li>
+                <li id="detail-type"></li>
+                <li id="detail-weaknesses"></li>
+                <li id="detail-spilversion"></li>
+                <li id="detail-canEvolve"></li>
+                <li id="detail-statsHP"></li>
+                <li id="detail-statsattack"></li>
+                <li id="detail-statsDefence"></li>
+                <li id="detail-statsSpecialAttack"></li>
+                <li id="detail-statsSpecialDefence"></li>
+                <li id="detail-statsSpeed"></li>
+              </ul>
+            </section>
           </section>
         </article>
       </section>
@@ -60,6 +54,9 @@
         <button id="btn-cancel">Close</button>
       </form>
     </dialog>
+    <footer>
+      <p>by Bulalle</p>
+    </footer>
 
     <script src="app.js"></script>
   </body>

@@ -3,84 +3,115 @@
 window.addEventListener("load", initApp);
 
 async function initApp() {
-  const pokemon = await getPokemons();
+  const pokemons = await getPokemon("dewgong.json");
 
-  pokemon.forEach(showpokemon);
-
-  //startAnimation();
+  for (const pokemon of pokemons) {
+    showpokemon(pokemon);
+    console.log(pokemon);
+  }
 }
 
-async function getPokemons() {
-  const response = await fetch("dewgong.json");
+async function getPokemon(url) {
+  const response = await fetch(url);
   const data = await response.json();
-  console.log("done fetching");
-  console.log(data);
   return data;
 }
-
-//function startAnimation() {
-//document.querySelector("#pokemon").classList.add("pulse");
-//}
 
 function showpokemon(pokemons) {
   console.log(pokemons);
 
-  const list = document.querySelector("#pokemons");
-  list.insertAdjacentHTML(
-    "beforeend",
-    /*html*/ `
-            <article class="grid-item">
-                <img src="${pokemons.image}">
-                <h2>${pokemons.name}</h2>
-                <p>Gender:${pokemons.gender}</p>
-                <p>ability: ${pokemons.ability}</p>
-                
-            </article>
-        `
-  );
+  const myPokemons = /* html */ `
+  
+    <article class="grid-item">
+        <h2>${pokemons.name}</h2>
+        <img src = "${pokemons.image}" alt=""/>
+        <p>Ability: ${pokemons.ability}</p>
+        <p> Gender: ${pokemons.gender}</p>
+    </article>
+
+`;
+
   document
-    .querySelector("#pokemons article:last-child")
+    .querySelector("#pokemon-character")
+    .insertAdjacentHTML("beforeend", myPokemons);
+  document
+    .querySelector("#pokemon-character article:last-child")
     .addEventListener("click", pokemonClicked);
 
   function pokemonClicked() {
-    showpokemonModal(pokemon);
+    console.log("______________________________________");
+
+    document.querySelector("#detail-image").src = pokemons.image;
+    document.querySelector("#detail-name").textContent = pokemons.name;
+    document.querySelector("#detail-info").textContent = pokemons.info;
+    document.querySelector("#detail-description").textContent =
+      pokemons.description;
+    document.querySelector(
+      "#detail-footprint"
+    ).textContent = `footprint: ${pokemons.footprint}`;
+    document.querySelector(
+      "#detail-statsSpeed"
+    ).textContent = `statsSpeed: ${pokemons.statsSpeed}`;
+    document.querySelector(
+      "#detail-ability"
+    ).textContent = `Ability: ${pokemons.ability}`;
+    document.querySelector(
+      "#detail-dexindex"
+    ).textContent = `Dexindex: ${pokemons.dexindex}`;
+    document.querySelector(
+      "#detail-subtype"
+    ).textContent = `Subtype: ${pokemons.subtype}`;
+    document.querySelector(
+      "#detail-generation"
+    ).textContent = `Generation: ${pokemons.generation}`;
+    document.querySelector(
+      "#detail-height"
+    ).textContent = `Height: ${pokemons.height} cm`;
+    document.querySelector(
+      "#detail-weight"
+    ).textContent = `Weight: ${pokemons.weight} kg`;
+    document.querySelector(
+      "#detail-gender"
+    ).textContent = `Gender: ${pokemons.gender}`;
+    document.querySelector(
+      "#detail-type"
+    ).textContent = `Type: ${pokemons.type}`;
+    document.querySelector(
+      "#detail-weaknesses"
+    ).textContent = `Weaknesses: ${pokemons.weaknesses}`;
+    document.querySelector(
+      "#detail-spilversion"
+    ).textContent = `Spilversion: ${pokemons.spilversion}`;
+
+    let canEvolve = generateEvolve(pokemons);
+
+    document.querySelector("#detail-canEvolve").textContent = canEvolve;
+    document.querySelector(
+      "#detail-statsHP"
+    ).textContent = `statsHP: ${pokemons.statsHP}`;
+    document.querySelector(
+      "#detail-statsattack"
+    ).textContent = `statsattack: ${pokemons.statsAttack}`;
+    document.querySelector(
+      "#detail-statsDefence"
+    ).textContent = `statsDefence: ${pokemons.statsDefence}`;
+    document.querySelector(
+      "#detail-statsSpecialAttack"
+    ).textContent = `statsSpecialAttack: ${pokemons.statsSpecialAttack}`;
+    document.querySelector(
+      "#detail-statsSpecialDefence"
+    ).textContent = `statsSpecialDefence: ${pokemons.statsSpecialDefence}`;
+
+    document.querySelector("#dialog-character").showModal();
   }
 }
 
-function showpokemonModal(pokemon) {
-  console.log(pokemon);
-  //image, name and house
-  document.querySelector("#dialog-image").src = pokemon.image;
-  document.querySelector("#dialog-title").textContent = pokemon.name;
-
-  // description
-  document.querySelector("#dialog-description").textContent =
-    pokemon.description;
-
-  document.querySelector("#dialog-ability").textContent = pokemon.ability;
-  document.querySelector("#dialog-footprint").textContent = pokemon.footprint;
-  document.querySelector("#dialog-dexindex").textContent = pokemon.dexindex;
-  document.querySelector("#dialog-type").textContent = pokemon.type;
-  document.querySelector("#dialog-subtype").textContent = pokemon.subtype;
-  document.querySelector("#dialog-weaknesses").textContent = pokemon.weaknesses;
-  document.querySelector("#dialog-gender").textContent = pokemon.gender;
-  document.querySelector("#dialog-weight").textContent = pokemon.weight;
-  document.querySelector("#dialog-height").textContent = pokemon.height;
-  document.querySelector("#dialog-generation").textContent = pokemon.generation;
-  document.querySelector("#dialog-spilversion").textContent =
-    pokemon.spilversion;
-  document.querySelector("#dialog-canEvolve").textContent = pokemon.canEvolve;
-  document.querySelector("#dialog-statsHP").textContent = pokemon.statsHP;
-  document.querySelector("#dialog-statsAttack").textContent =
-    pokemon.statsAttack;
-  document.querySelector("#dialog-statsDefence").textContent =
-    pokemon.statsDefence;
-  document.querySelector("#dialog-statsSpecialAttack").textContent =
-    pokemon.statsSpecialAttack;
-  document.querySelector("#dialog-statsSpecialDefence").textContent =
-    pokemon.statsSpecialDefence;
-  document.querySelector("#dialog-statsSpeed").textContent = pokemon.statsSpeed;
-
-  // show dialog
-  document.querySelector("#dialog-pokemon").showModal();
+function generateEvolve(pokemons) {
+  let canEvolve = "";
+  if (pokemons.canEvolve) {
+    canEvolve = `${pokemons.name} can evolve.`;
+  } else {
+    canEvolve = `${pokemons.name} can't evolve.`;
+  }
+  return canEvolve;
 }
