@@ -92,7 +92,7 @@ main {
 .grid-item {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   padding: 1.5em;
-  background-color: var(--white);
+  background-color: #6cafe1;
   transition: 0.5s;
   animation: fadeIn 0.5s;
   cursor: pointer;
@@ -100,7 +100,7 @@ main {
 }
 
 .grid-item:hover {
-  box-shadow: 0 8px 16px 0 var(--green);
+  box-shadow: 0 8px 16px 0 rgb(9, 153, 26);
 }
 
 .grid-item img {
@@ -143,19 +143,11 @@ button {
 dialog {
   border-color: rgb(9, 153, 26);
   background-color: #6cafe1;
-  width: 65vw;
+  width: 45vw;
   padding: 2em 1em;
 }
 
 .dialog-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-
-dialog ul {
-  margin: 0.5em 0 1em;
-  padding-inline-start: 1.5em;
-}
-dialog p {
-  margin: 0.5em 0 1em;
 }
