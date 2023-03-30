@@ -106,23 +106,7 @@ main {
 .grid-item img {
   width: 70%;
   height: 200px;
-
   border-radius: 30%;
-}
-
-.grid-item p {
-  margin: 0.3em 0;
-}
-
-.grid-container .btns {
-  padding: 1em 0 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-}
-
-.grid-container .btns button {
-  width: 100%;
 }
 
 button {
@@ -143,11 +127,6 @@ button {
 dialog {
   border-color: rgb(9, 153, 26);
   background-color: #6cafe1;
-  width: 45vw;
-  padding: 2em 1em;
-}
-
-.dialog-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  width: 70vw;
+  height: 80vw;
 }

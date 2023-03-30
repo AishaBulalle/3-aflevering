@@ -8,7 +8,7 @@ async function initApp() {
   );
 
   for (const pokemon of pokemons) {
-    showpokemon(pokemon);
+    showPokemon(pokemon);
     console.log(pokemon);
   }
 }
@@ -19,7 +19,7 @@ async function getPokemon(url) {
   return data;
 }
 
-function showpokemon(pokemons) {
+function showPokemon(pokemons) {
   console.log(pokemons);
 
   const myPokemons = /* html */ `
